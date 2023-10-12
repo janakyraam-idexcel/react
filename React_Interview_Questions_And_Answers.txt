@@ -1,0 +1,64 @@
+React
+
+1. Why we use the npm package with the react?
+A. Node Package Manager(npm) is used to install external libraries or packages for javascript. The command which is used to install package is npm install package-name. It is also used to help to make the build of the project. We can also start react application using the command npm start.
+
+2. What is the alternative of npm?
+A. The name of this package manager is yarn. This is basically a package manager which is written by or created by a facebook. This is pretty similar as the npm.
+
+3. What is the current version of the react project?
+A. In package.json the current react version shown is 18.2.0
+
+4. What is the difference between package.json and package-lock.json?
+A. Package.json will keep the details of the application and package-lock.json will keep the details of the libraries and dependencies. dependencies means how many libraries we required.
+
+5. Why we don't push our node modules folder on a git?
+A. These node modules are really big in size.
+
+6. which is the most important file in react project?
+A. package.json. We can find the file in the root directory.
+
+7. If we do not push this code here then how can another developer will get these node modules and libraries?
+A. He just need to run only the simple command npm install and the node modules will be created. npm install will take the information from the package.json and install according to that information.
+
+8. What is component?
+A. the piece of code which is reusable again and again is called component.
+
+9. How many types of components we have in react?
+A. If we create a new logical thing then we make it with functional and class components. Otherwise if we want to categorize it there are lots of components present.
+
+10. Can we define a component inside the another component?
+A. Yes, we can define it. The nested component cannot have the same name with the parent component.
+
+11. Can we use Angular and React together?
+A. Yes, we can use it because React is an library and we use it in any framework so that we can use react inside angular
+
+12. Can we use react js without jsx?
+A. Yes, we can use it 
+
+13. Can you jsx without react?
+A. Yes, we can use even inside the other libraries also like if we want we can use it in angular also without any framework also.
+
+14. Why the data value in one function is updated when we have performed button click?
+A. When a button is clicked in a React component that uses the useState hook, the data value is updated because the state is being modified by the onClick event handler, triggering a re-render of the component.
+
+15. Why the data value in one function is not updated when we have performed button click?
+A. If the data value in a function is not updated when a button is clicked, it may be due to a scoping issue or an asynchronous operation, or the state hasn't been properly managed using React's state management tools like useState.
+
+15. What is the state?
+A. It is a data container such as variable which is used to store details. It is a data collector.
+
+16. Can we use state outside of one component and is the state private or public property of a class?
+A. The state is always public. We cannot use it from one component to the another component.
+
+17. Can we use usestate hooks in the class component?
+A. No, we can use hooks only in functional component.
+
+18. What are propes?
+A. Propes are used to transfer the data or send the data from one component to the other component and sibilings components and child components also.
+
+19. Can we pass a function inside the props?
+A. 
+
+20. Can i send html inside props?
+A. 
