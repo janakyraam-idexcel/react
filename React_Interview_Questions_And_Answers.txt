@@ -61,4 +61,38 @@ A. Propes are used to transfer the data or send the data from one component to t
 A. 
 
 20. Can i send html inside props?
+A. we have to make prop.children.
+
+21. How we can get the checkbox or radio button?
 A. 
+
+22. In react js why we should not use style for showing and hiding the elements?
+A. When we use CSS for hide and show it becomes complicated and time taking process. To improve the performance we should use conditional statement in react to show and hide elements.
+
+23. How you can disable any field in the react js?
+A. i can disable submit button with using if condition and if above fields are not filled submit button can be disabled and if above fields are filled submit button can be active.
+
+24. can we use normal const here like loggedin?
+A. yes Possible  Multiple conditional separeate  varaible declartion                      import React, { useState } from "react";
+
+const Multipleconditional = () => {
+  let [islogged, setLogged] = useState();
+
+  islogged = 2000
+  
+
+  return <>{
+    
+    islogged ===100 ? <h1>Hello Loggin </h1> :
+  
+   islogged ===2000 ?  <h1>Helo login again </h1> :
+   
+   <p>logouta....</p>
+   
+   }</>
+};
+
+export default Multipleconditional;
+
+25. How we can combine both data like user and password and sent to the api in for just logged in a user?
+A.
