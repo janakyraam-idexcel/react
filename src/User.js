@@ -6,7 +6,7 @@
 //     );
 //   }
 
-import React from "react";
+//import React from "react";
 
 // export function User(){
 //   return(
@@ -31,10 +31,40 @@ import React from "react";
 
 // export default User;
 
-function User(){
+//function User(){
     // return (<div>{30*30}</div>);
     // return React.createElement("h1",null,"Hello");
-    return (<div>Hello</div>);
-}
+    //return (<div>Hello</div>);
+//}
 
-export default User;
+//export default User;
+
+// function User(props) {
+//     return(
+//         <div className="User">
+//             <h1>User Component</h1>
+//             <button onClick={props.data}>Call Function</button>
+//         </div>
+//     )
+    
+// }
+
+// import React from "react";
+
+// class User extends React.Component {
+//     constructor(){
+//         super();
+//         this.state={email:"test@gmail.com"};
+//     }
+//     render() {
+//         console.warn("render", this.state.email);
+//         return(
+//             <div>
+//                 <h1>User Component</h1>
+//                 <button onClick={()=>this.setState({email:"abc@gnmail.com"})}>update Email</button>
+//             </div>
+//         )
+//     }
+// }
+
+// export default User;

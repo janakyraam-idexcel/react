@@ -96,3 +96,30 @@ export default Multipleconditional;
 
 25. How we can combine both data like user and password and sent to the api in for just logged in a user?
 A.
+
+26. How we can pass data from the child component to the parent component?
+A. You can pass data from a child component to a parent component in React by defining a callback function in the parent component and passing it as a prop to the child component, which the child component can then invoke to send data to the parent.
+
+27. Can we pass data function as a props from super child component?
+A. Yes, as we are sending function in the child props, we also send the function in super child props.
+
+28. Whenever i remove my product component from here (dom) and want to load the product component again. Is it my previous life cycle continue or new life cycle will be created?
+A. A new life cycle will be started.
+
+29. Cna we use props in constructor method?
+A. Yes, we use props in constructor method.
+
+30. Can we update state inside a render and inside a component did mount?
+A. No, it will make infinite loop like component did update without condition for render.
+
+31. Can we use state in component did update with condition?
+A. We can use but we have to use it inside the component did update.
+
+32. can we call apis inside component did update?
+A. Yes, we can call it on conditional base. If dont want to call it then we must have to call in component did mount, button click update, any function
+
+33. can we stop component did update?
+A. we can stop if it gives false.
+
+34. Which one is calling is first and which one is calling second in should component update and component did update?
+A. 

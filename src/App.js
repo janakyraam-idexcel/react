@@ -192,12 +192,151 @@ import Login from './Login';
 // }
 
 //Basic form validation
-function App(){
-  return(
-    <div className="App">
-      <Login/>
-    </div>
-  )
+// function App(){
+//   return(
+//     <div className="App">
+//       <Login/>
+//     </div>
+//   )
+// }
+
+//Pass functions as props
+// function App(){
+//   function getData(){
+//     alert("Hello from app component");
+//   }
+//   return(
+//     <div className="App">
+//       <User data={getData}/>
+//       <Student data={getData}/>
+//       {/* <User data={getData}/>
+//       <User data={getData}/> */}
+//     </div>
+//   )
+// }
+
+//Life cycle method
+// function App(){
+//   return(
+//     <div className="App">
+//       <h1>Life cycle method</h1>
+//       <button>Load product</button>  Mounting <br></br><br></br>
+//       <button>Update product</button> //Updating <br></br><br></br>
+//       <button>Remove product</button> //Unmounting
+//       {/* <App/> */}
+//     </div>
+//   )
+// }
+
+//First life cycle method
+
+// class App extends Component{
+//   constructor(){
+//     super();
+//     this.state={
+//       name:'test'
+//     }
+//     console.warn("constructor");
+//   }
+//   render(){
+//     console.warn("constructor");
+//     return(
+//           <div className="App">
+//             <h1>First Life cycle method {this.state.name}</h1>
+//           </div>
+//         )
+//       }
+// }
+
+//Render Life cycle method
+
+// function App(){
+//   const[name, setName]=useState("test")
+//     return(
+//           <div className="App">
+//             <User name={name}/>
+//             <button onClick={()=>setName("abc")}>Update name</button>
+//           </div>
+//         )
+// }
+
+
+//Component Did mount Life cycle
+// class App extends Component{
+//   constructor(){
+//     super();
+//     console.warn("constructor");
+//     this.state={name:"test"}
+//   }
+//   componentDidMount(){
+//     console.warn("constructor");
+//     //console.warn(this.setState({name:"abc"}));
+//   }
+//   render(){
+//     console.warn("constructor");
+//     return(
+//           <div className="App">
+//             <h1>Component Did Mount {this.state.name}</h1>
+//             <button onClick={()=>this.setState({name:"abc"})}>Update</button>
+//           </div>
+//         )
+//       }
+// }
+
+//Component did update Life cycle
+// class App extends Component{
+//   constructor(){
+//     super();
+//     console.warn("constructor");
+//     this.state={
+//       name:"test",
+//       count:0
+//     }
+//   }
+//   componentDidUpdate(prevProps, prevState, snapshot){
+//     console.warn("componentDidUpdate", prevState);
+//     // if(this.state.count<10){
+//     //   this.setState({count:this.state.count+1});
+//     // }
+//   }
+//   render(){
+//     console.warn("render");
+//     return(
+//           <div className="App">
+//             <h1>Component Did Update {this.state.name}{this.state.count}</h1>
+//             {/* <button onClick={()=>{this.setState({name:"abc"})}}>Update Name</button> */}
+//             <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button>
+//           </div>
+//         )
+//       }
+// }
+
+//should component update life cycle
+
+class App extends Component{
+  constructor(){
+    super();
+    console.warn("constructor");
+    this.state={
+      count:0
+    }
+  }
+  shouldComponentUpdate(){
+    console.warn("shouldComponentUpdate", this.state.count);
+    // return true;
+    if (this.state.count<5){
+      return true;
+    }
+  }
+  render(){
+    console.warn("render");
+    return(
+          <div className="App">
+            <h1>should Component Update {this.state.count}</h1>
+            <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button>
+          </div>
+        )
+      }
 }
 
 export default App;
