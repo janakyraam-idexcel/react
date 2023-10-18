@@ -5,6 +5,7 @@ import App from './App';
 //import User from './User';
 import reportWebVitals from './reportWebVitals';
 import Student from './Student';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

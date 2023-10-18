@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import User from './User';
-import { Component, useState } from 'react';
+import { Component, useState, useEffect } from 'react';
 import React from 'react';
 import Student from './Student';
 import Profile from './Profile';
 import Login from './Login';
+import Test from './Test';
+import './style.css';
+import style from './custom.module.css';
+import {Button, Badge, Card} from 'react-bootstrap'
 
 /*Sample Program */
 //function App() { //functional component
@@ -313,30 +317,125 @@ import Login from './Login';
 
 //should component update life cycle
 
-class App extends Component{
-  constructor(){
-    super();
-    console.warn("constructor");
-    this.state={
-      count:0
-    }
-  }
-  shouldComponentUpdate(){
-    console.warn("shouldComponentUpdate", this.state.count);
-    // return true;
-    if (this.state.count<5){
-      return true;
-    }
-  }
-  render(){
-    console.warn("render");
-    return(
-          <div className="App">
-            <h1>should Component Update {this.state.count}</h1>
-            <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button>
-          </div>
-        )
-      }
+// class App extends Component{
+//   constructor(){
+//     super();
+//     console.warn("constructor");
+//     this.state={
+//       count:0
+//     }
+//   }
+//   shouldComponentUpdate(){
+//     console.warn("shouldComponentUpdate", this.state.count);
+//     // return true;
+//     if (this.state.count<5){
+//       return true;
+//     }
+//   }
+//   render(){
+//     console.warn("render");
+//     return(
+//           <div className="App">
+//             <h1>should Component Update {this.state.count}</h1>
+//             <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Name</button>
+//           </div>
+//         )
+//       }
+// }
+
+//component will unmount life cycle method
+
+// class App extends Component{
+//   constructor(){
+//     super();
+//     this.state={
+//       show:true
+//     }
+//   }
+//   render(){
+//     return(
+//           <div className="App">
+//             {
+//               this.state.show?<Test/>
+//               :<h4>Component is removed</h4>
+//             }
+//             <h1>component will unmount</h1>
+//             <button onClick={()=>this.setState({show:false})}>Toggle Test Component</button>
+//           </div>
+//         )
+//       }
+// }
+
+//Hooks
+
+// function App(){
+//   const [data,setData]=useState("test");
+//   return(
+//     <div className="App">
+//       <h1>Hooks in React {data}</h1>
+//       <button onClick={()=>setData('peter')}>Update State</button>
+//     </div>
+//   );
+// }
+
+//useEffect
+
+// function App(){
+//   const [count,setCount]=useState(0);
+//   useEffect(()=>{
+//     console.log("use effect 1");
+//   });
+//   return(
+//     <div className="App">
+//       <h1>use Effect in React {count}</h1>
+//       <button onClick={()=>setCount(count+1)}>Update Counter</button>
+//     </div>
+//   );
+// }
+
+// function App(){
+//   let[count,setCount]=useState(0);
+//   return(
+//     <div className="App">
+//       <User countProps={count}/>
+//       <button onClick={()=>setCount(count+1)}>Update Counter</button>
+//     </div>
+//   );
+// }
+
+// function App(){
+//   const styleItem={color: 'red', backgroundColor:'black'}
+//   return(
+//     <div className="App">
+//       <h1 className='primary'>Style type 1 in React js</h1>
+//       <h1 style={styleItem}>Style type 2 in React js</h1>
+//       <h1 className={style.success}>Style type 3 in React js</h1>
+//     </div>
+//   );
+// }
+
+function App(){
+  return(
+    <div className="App">
+     <h1>Install Bootstrap</h1>
+     <Button onClick={()=>alert("Hello")}>Click Me</Button>
+     <h1>
+        Example heading <Badge bg="secondary">New</Badge>
+      </h1>
+      <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Body>
+        <Card.Title>Card Title</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <Button variant="primary">Go somewhere</Button>
+      </Card.Body>
+    </Card>
+    </div>
+  );
 }
+
 
 export default App;

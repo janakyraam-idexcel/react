@@ -22,14 +22,14 @@
 //     }
 // }
 
-function Student(props) {
-    return(
-        <div className="User">
-            <h1>Student Component</h1>
-            <button onClick={props.data}>Call Function</button>
-        </div>
-    )
+// function Student(props) {
+//     return(
+//         <div className="User">
+//             <h1>Student Component</h1>
+//             <button onClick={props.data}>Call Function</button>
+//         </div>
+//     )
     
-}
+// }
 
-export default Student;
+// export default Student;

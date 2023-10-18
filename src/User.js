@@ -66,5 +66,23 @@
 //         )
 //     }
 // }
+import React,{useState, useEffect} from "react";
+
+// function User(props){
+// // let[count,setCount]=useState(0);
+//   useEffect(()=>{
+//     console.warn("use effect 1 is called");
+//   },[])
+// //   useEffect(()=>{
+// //     console.warn("use effect 2 is called");
+// //   })
+//     return(
+//       <div className="App">
+//         {/* <h1>User Component {count}</h1> */}
+//         <h1>User Component {props.countProps}</h1>
+//         {/* <button onClick={()=>setCount(count+1)}>Update Counter</button> */}
+//       </div>
+//     );
+//   }
 
 // export default User;

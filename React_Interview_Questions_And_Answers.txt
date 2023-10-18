@@ -122,4 +122,29 @@ A. Yes, we can call it on conditional base. If dont want to call it then we must
 A. we can stop if it gives false.
 
 34. Which one is calling is first and which one is calling second in should component update and component did update?
+A. should component update is called first and if this true then component did update will be called.
+
+35. Whenever if i remove the particular component and component will unmount will this method called before removing the component or after removing the component?
+A. It will be called just before unmounting.
+
+36. Parent component is functional component and child component is class component that time this life cycle method is worked or not?
+A. It works, it's doesn't matter about the component. It's current component should be class component.
+
+37. Can we use hooks inside the class component also?
+A.  It works
+
+38. Can we use useeffect inside the class component?
+A. No
+
+39. can we useeffect inside the child function?
+A. No
+
+40. Can we update our state inside useEffect?
 A. 
+
+41. Can we use style 1 which is normal style and style 3 which is modular style in a single class also?
+A. Yes, even on single tag we can modular css, simple css and inline css.
+
+42. what is the alternative of bootstrap in react js?
+A.
+
