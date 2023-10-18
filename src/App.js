@@ -2,14 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import User from './User';
 import { Component, useState, useEffect } from 'react';
-import React from 'react';
+import React, {Fragment} from 'react';
 import Student from './Student';
 import Profile from './Profile';
 import Login from './Login';
 import Test from './Test';
 import './style.css';
 import style from './custom.module.css';
-import {Button, Badge, Card} from 'react-bootstrap'
+import {Button, Badge, Card, Table, Tab} from 'react-bootstrap'
+import Cols from './Cols';
 
 /*Sample Program */
 //function App() { //functional component
@@ -414,28 +415,235 @@ import {Button, Badge, Card} from 'react-bootstrap'
 //   );
 // }
 
+//Bootstrap
+// function App(){
+//   return(
+//     <div className="App">
+//      <h1>Install Bootstrap</h1>
+//      <Button onClick={()=>alert("Hello")}>Click Me</Button>
+//      <h1>
+//         Example heading <Badge bg="secondary">New</Badge>
+//       </h1>
+//       <Card style={{ width: '18rem' }}>
+//       <Card.Img variant="top" src="holder.js/100px180" />
+//       <Card.Body>
+//         <Card.Title>Card Title</Card.Title>
+//         <Card.Text>
+//           Some quick example text to build on the card title and make up the
+//           bulk of the card's content.
+//         </Card.Text>
+//         <Button variant="primary">Go somewhere</Button>
+//       </Card.Body>
+//     </Card>
+//     </div>
+//   );
+// }
+
+
+//List of objects using map function
+// function App(){
+//   //const users=['test','bruce','peter','sam'];
+
+//   // users.map((item)=>{
+//   //   console.warn("My name is ",item);
+//   // })
+
+//   // for(let i=0; i<users.length; i++){
+//   //   console.warn("for,,, My name is ",users[i]);
+//   // }
+//   const users=[
+//     {name:'Anil', email: 'test@gmail.com', 'contact':'111'},
+//     {name:'Bruce', email: 'test@gmail.com', 'contact':'222'},
+//     {name:'Peter', email: 'test@gmail.com', 'contact':'333'},
+//     {name:'Sam', email: 'test@gmail.com', 'contact':'444'},
+
+//   ]
+//   return(
+//     <div className="App">
+//      <h1>Handle Array with List</h1>
+//      <table width="100%" border="1"> 
+//       <tr>
+//         <td>Name</td>
+//         <td>Email</td>
+//         <td>Contact</td>
+//       </tr>
+//      {
+//       users.map((item)=>
+//       <tr>
+//         <td>{item.name}</td>
+//         <td>{item.email}</td>
+//         <td>{item.contact}</td>
+//       </tr>
+//       //<h1>{item.name}{item.email}</h1>
+//       )
+//     }
+//   </table>
+//     </div>
+//   );
+// }
+
+//List with Bootstrap Table
+// function App(){
+//   const users=[
+//     {name:'Anil', email: 'test@gmail.com', 'contact':'111'},
+//     {name:'Bruce', email: 'test@gmail.com', 'contact':'222'},
+//     {name:'Peter', email: 'test@gmail.com', 'contact':'111'},
+//     {name:'Sam', email: 'test@gmail.com', 'contact':'777'},
+
+//   ]
+//   return(
+//     <div className="App">
+//      <h1>List with Bootstrap Table</h1>
+//      <Table striped variant='light' bordered hover>
+//      <tbody>
+//       <tr>
+//         <td>Name</td>
+//         <td>Email</td>
+//         <td>Contact</td>
+//       </tr>
+//      {
+//       // users.map((item,i)=>
+//       // <tr key={i}>
+//       //   <td>{item.name}</td>
+//       //   <td>{item.email}</td>
+//       //   <td>{item.contact}</td>
+//       // </tr>
+//       // )
+//       users.map((item,i)=>
+//       item.contact==='111'?
+//      <tr key={i}>
+//       <td>{item.name}</td>
+//        <td>{item.email}</td>
+//          <td>{item.contact}</td>
+//      </tr>:null
+//       )
+//     }
+//     </tbody>
+//   </Table>
+//   </div>
+//   );
+// }
+
+//Nested Array
+// function App(){
+//   const users=[
+//     {name:'Anil', email: 'test@gmail.com', address:[
+//       {Hn:"10", city:"Noida", country:"India"},
+//       {Hn:"34", city:"Gurgoan", country:"India"},
+//       {Hn:"45", city:"Delhi", country:"India"}
+//     ]},
+//     {name:'Bruce', email: 'test@gmail.com', address:[
+//       {Hn:"10", city:"Noida", country:"India"},
+//       {Hn:"34", city:"Gurgoan", country:"India"},
+//       {Hn:"45", city:"Delhi", country:"India"}
+//     ]},
+//     {name:'Peter', email: 'test@gmail.com', address:[
+//       {Hn:"10", city:"Noida", country:"India"},
+//       {Hn:"34", city:"Gurgoan", country:"India"},
+//       {Hn:"45", city:"Delhi", country:"India"}
+//     ]},
+//     {name:'Sam', email: 'test@gmail.com', address:[
+//       {Hn:"10", city:"Noida", country:"India"},
+//       {Hn:"34", city:"Gurgoan", country:"India"},
+//       {Hn:"45", city:"Delhi", country:"India"}
+//     ]}
+//   ]
+//   return(
+//     <div className="App">
+//      <h1>List with Bootstrap Table</h1>
+//      <Table variant='light' striped>
+//      <tbody>
+//       <tr>
+//       <td>S.No</td>
+//         <td>Name</td>
+//         <td>Email</td>
+//         <td>Address</td>
+//       </tr>
+//      {
+//       users.map((item,i)=>
+//      <tr key={i}>
+//       <td>{i+1}</td>
+//       <td>{item.name}</td>
+//        <td>{item.email}</td>
+//          <td>
+//          <Table variant='light' striped>
+//           <tbody>{
+//           item.address.map((data,i)=>
+//             <tr key={i}>
+//               <td>{data.Hn}</td>
+//               <td>{data.city}</td>
+//               <td>{data.country}</td>
+//             </tr>
+//           )}
+//           </tbody>
+//           </Table>
+//           </td>
+//      </tr>
+//       )
+//     }
+//     </tbody>
+//   </Table>
+//   </div>
+//   );
+// }
+
+//Reuse Component
+
+// function App(){
+//   const users=[
+//     {name:'Anil', email: 'test@gmail.com', 'contact':'111'},
+//     {name:'Bruce', email: 'test@gmail.com', 'contact':'222'},
+//     {name:'Peter', email: 'test@gmail.com', 'contact':'333'},
+//     {name:'Sam', email: 'test@gmail.com', 'contact':'444'},
+//   ]
+//   return(
+//     <div className="App">
+//      <h1>Reuse Component with List</h1>
+//      {
+//       users.map((item)=>
+//       //<h1>Hello {item.name}</h1>
+//       <h1><User data={item}/></h1>
+//       )
+//      }
+//     </div>
+//   );
+// }
+
+//React Fragment
+
+// function App(){
+//   return(
+//     // <div>
+//     <div>
+//       <h1>React Fragment</h1>
+//       <table>
+//         <tbody>
+//           <tr>
+//             <Cols/>
+//           </tr>
+//         </tbody>
+//       </table>
+//     </div>
+//     // </div>
+//   );
+// }
+
+//Send Data from child component to the Parent Component or Lifting State up
+
 function App(){
+  //const name="test sample";
+  function getName(name){
+    //alert("Hello User");
+    alert(name);
+  }
   return(
-    <div className="App">
-     <h1>Install Bootstrap</h1>
-     <Button onClick={()=>alert("Hello")}>Click Me</Button>
-     <h1>
-        Example heading <Badge bg="secondary">New</Badge>
-      </h1>
-      <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <div>
+      <h1>Lifting State Up</h1>
+      {/* <User data={name}/> */}
+      <User getData={getName}/>
+
     </div>
   );
 }
-
 
 export default App;

@@ -66,7 +66,7 @@
 //         )
 //     }
 // }
-import React,{useState, useEffect} from "react";
+//import React,{useState, useEffect} from "react";
 
 // function User(props){
 // // let[count,setCount]=useState(0);
@@ -85,4 +85,30 @@ import React,{useState, useEffect} from "react";
 //     );
 //   }
 
-// export default User;
+// function User(props){
+//     // alertFunction(){
+
+//     // }
+//     return(
+//         <div>
+//             <span>{props.data.name}</span>
+//             <span>{props.data.email}</span>
+//             <span>{props.data.contact}</span>
+//         </div>
+//     )
+
+// }
+
+function User(props){
+    const name="test sample";
+    return(
+        <div>
+            {/* <h1>User Name is {props.data}</h1> */}
+            <h1>User Name is:</h1>
+            <button onClick={()=>props.getData(name)}>Click Me</button>
+        </div>
+
+    );
+}
+
+export default User;

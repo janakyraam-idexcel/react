@@ -148,3 +148,26 @@ A. Yes, even on single tag we can modular css, simple css and inline css.
 42. what is the alternative of bootstrap in react js?
 A.
 
+43. After creating the table with data why we aregetting errors in the console?
+A. 
+
+44. How to show the serial number in the table with objects?
+A.
+
+45. In the small table can i put a serial number in nested array list?
+A.
+
+46. Can we replace our nested table on a first place?
+A. Yes, we can keep on a first place.
+
+47. On span click it want to alert a name then where we will write alert function and we will call it on a click of this span button then where we will make this button. In a User component or App component?
+A. We can make the alert in App.js file because we are sending data from App.js to User.js because when we write the function in User.js and call the component in the list everytime the function will be created and the memory will be wasted. So, that's why we should write function in App.js and reuse the function.
+
+48. Can i just simply put here key={id} and also simply put the class name for style? Are they feasible with the fragment?
+A. we can use the key property  but we cannot use the classname.
+
+49. If i am using fragment with child function, can i use it with the parent function also?
+A. Yes, we can use it in all components.
+
+50. Can we call the super child function inside a super parent component?
+A. 
