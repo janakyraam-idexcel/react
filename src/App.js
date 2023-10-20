@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import User from './User';
-import { Component, useState, useEffect } from 'react';
-import React, {Fragment,PureComponent} from 'react';
+import { Component, useState, useEffect, useMemo } from 'react';
+import React, {Fragment,PureComponent,createRef} from 'react';
 import Student from './Student';
 import Profile from './Profile';
 import Login from './Login';
@@ -648,20 +648,67 @@ import Counter from './Counter';
 // }
 
 //Pure Component
-class App extends PureComponent {
+// class App extends PureComponent {
+//   constructor(){
+//     super();
+//     this.state = {
+//       count:1
+//     }
+//   }
+//   render(){
+//     console.warn("rerender");
+//     return (
+//       <div>
+//         <Counter count={this.state.count}/>
+//         {/* <h1>Pure Component {this.state.count}</h1> */}
+//         <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Count</button>
+//       </div>
+//     )
+//   }
+// }
+
+//Use Memo
+// function App(){
+//   const[count, setCount]=useState(0);
+//   const[item, setItem]=useState(5);
+//   const multiMemo=useMemo(
+//     function MultiCount(){
+//       console.warn("Multi Count");
+//       return count*2;
+//     },[count]
+//   )
+//   return(
+//     <div className='App'>
+//       <h1>useMemo Hook in react</h1>
+//       <h2>count:{multiMemo}</h2>
+//       <h2>item:{item}</h2>
+//       <button onClick={()=>setCount(count+1)}>Update Count</button>
+//       <button onClick={()=>setItem(item+1)}>Update Item</button>
+//     </div>
+//   )
+// }
+
+//Ref
+class App extends Component {
   constructor(){
     super();
-    this.state = {
-      count:1
-    }
+   this.inputRef=createRef();
+  }
+  componentDidMount(){
+    //console.warn(this.inputRef.current.value="1000");
+  }
+  getVal(){
+    console.warn(this.inputRef.current.value);
+    this.inputRef.current.style.color="red";
+    this.inputRef.current.style.backgroundColor="black";
   }
   render(){
     console.warn("rerender");
     return (
-      <div>
-        <Counter count={this.state.count}/>
-        {/* <h1>Pure Component {this.state.count}</h1> */}
-        <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Count</button>
+      <div className='App'>
+        <h1>Ref in React</h1>
+        <input type='text' ref={this.inputRef}/>
+        <button onClick={()=>this.getVal()}>Check Ref</button>
       </div>
     )
   }

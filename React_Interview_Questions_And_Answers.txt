@@ -173,4 +173,19 @@ A. Yes, we can use it in all components.
 A. Yes
 
 51. If we want to use pure component feature in functional component then want we want to use here?
+A. useMemo
+
+52. Can we use useMemo inside class component also?
+A. 
+
+53. can we use props for useMemo?
+A.
+
+54. Can we use more than one Ref inside the single component?
+A. Yes
+
+55. How you can use the ref inside functional component?
+A. useRef, we can use it in class component
+
+56. Can i use two ref on a single node?
 A. 
