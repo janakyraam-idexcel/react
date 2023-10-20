@@ -169,5 +169,8 @@ A. we can use the key property  but we cannot use the classname.
 49. If i am using fragment with child function, can i use it with the parent function also?
 A. Yes, we can use it in all components.
 
-50. Can we call the super child function inside a super parent component?
+50. Can we call the super child function inside a super parent component with the help of fuunction as a props?
+A. Yes
+
+51. If we want to use pure component feature in functional component then want we want to use here?
 A. 

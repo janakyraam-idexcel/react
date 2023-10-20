@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import User from './User';
 import { Component, useState, useEffect } from 'react';
-import React, {Fragment} from 'react';
+import React, {Fragment,PureComponent} from 'react';
 import Student from './Student';
 import Profile from './Profile';
 import Login from './Login';
@@ -11,6 +11,7 @@ import './style.css';
 import style from './custom.module.css';
 import {Button, Badge, Card, Table, Tab} from 'react-bootstrap'
 import Cols from './Cols';
+import Counter from './Counter';
 
 /*Sample Program */
 //function App() { //functional component
@@ -630,20 +631,40 @@ import Cols from './Cols';
 
 //Send Data from child component to the Parent Component or Lifting State up
 
-function App(){
-  //const name="test sample";
-  function getName(name){
-    //alert("Hello User");
-    alert(name);
-  }
-  return(
-    <div>
-      <h1>Lifting State Up</h1>
-      {/* <User data={name}/> */}
-      <User getData={getName}/>
+// function App(){
+//   //const name="test sample";
+//   function getName(name){
+//     //alert("Hello User");
+//     alert(name);
+//   }
+//   return(
+//     <div>
+//       <h1>Lifting State Up</h1>
+//       {/* <User data={name}/> */}
+//       <User getData={getName}/>
 
-    </div>
-  );
+//     </div>
+//   );
+// }
+
+//Pure Component
+class App extends PureComponent {
+  constructor(){
+    super();
+    this.state = {
+      count:1
+    }
+  }
+  render(){
+    console.warn("rerender");
+    return (
+      <div>
+        <Counter count={this.state.count}/>
+        {/* <h1>Pure Component {this.state.count}</h1> */}
+        <button onClick={()=>{this.setState({count:this.state.count+1})}}>Update Count</button>
+      </div>
+    )
+  }
 }
 
 export default App;
