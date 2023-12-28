@@ -206,4 +206,10 @@ A. Uncontrolled Component.
 A. 
 
 62. We have just provided routes inside our route. So what if we just put the code rather than routes?
-A.
+A. Yes, it will work.
+
+63. what if we directly create a link for pages?
+A. It is not good practice. Everytime it will refresh the page while navigating.
+
+64. Why we use switches?
+A. They will just find the first route and they will return it.

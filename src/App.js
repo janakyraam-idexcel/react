@@ -13,6 +13,10 @@ import { Button, Badge, Card, Table, Tab } from 'react-bootstrap'
 import Cols from './Cols';
 import Counter from './Counter';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home  from './Home';
+import About from './About';
+import Nav from './Nav';
+
 /*Sample Program */
 //function App() { //functional component
 //let data="test";
@@ -819,43 +823,75 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 //   )
 // }
 
-function App() {
 
-  return (
+// function App() {
+
+//   return (
+//     <div className="App">
+//       <h1>Routing Setup</h1>
+//      <Router>
+//         <Link to="/home">Home</Link><br/>
+//         <Link to="/about">About</Link><br/>
+//         <Link to="/login">Login</Link><br/>
+//         <Routes>
+//         <Route path="/" exact element={<Home1 />}/>
+//         <Route path="/about" element={<About1 />}/>
+//         <Route path="/*" element={<PageNotFound />}/>
+//         </Routes>
+//      </Router>
+//     </div>
+//   )
+// }
+
+// function Home1() {
+//   return (
+//     <div>
+//       <h1>Home Page</h1>
+//       <p>This is my Home Page</p>
+//     </div>
+//   )
+// }
+
+// function About1() {
+//   return (
+//     <div>
+//       <h1>About Page</h1>
+//       <p>This is my About Page</p>
+//     </div>
+//   )
+// }
+
+// function PageNotFound() {
+//   return (
+//     <div>
+//       <h1>404</h1>
+//       <p>This page is not found</p>
+//     </div>
+//   )
+// }
+
+function App(){
+  let user=[
+    {name: 'John', id: 1},
+    {name: 'Peter', id: 2},
+    {name: 'Bruce', id: 3},
+    {name: 'Tony', id: 4}
+  ]
+  return(
     <div className="App">
-      <h1>Routing Setup</h1>
       <Router>
-        <nav>
-        <Link to="/home">Home</Link>
-        <br></br>
-        <Link to="/about">About</Link>
-        </nav>
-        <Routes>
-        <Route path="/home" element={<Home />}/>
-        <Route path="/about" element={<About />}/>
-        </Routes>
+      <h1>React Dynamic Routing</h1>
+      {
+        user.map((item)=>
+          <div><Link to={"/user/"+item.id+"/"+item.name}>{item.name}</Link></div>
+        )
+      }
+      <Route path="/user/:id/:name"><User/></Route>
       </Router>
     </div>
   )
 }
 
-function Home() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-      <p>This is my Home Page</p>
-    </div>
-  )
-}
-
-function About() {
-  return (
-    <div>
-      <h1>About Page</h1>
-      <p>This is my About Page</p>
-    </div>
-  )
-}
 
 export default App;
 

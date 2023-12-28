@@ -1,4 +1,5 @@
 import React,{forwardRef} from 'react';
+import {withRouter} from 'react-router-dom';
 // function User() { //functional component
 //     return (
 //       <div className="App">
@@ -112,15 +113,26 @@ import React,{forwardRef} from 'react';
 //     );
 // }
 
-function User(props, ref){
+// function User(props, ref){
+//     return(
+//         <div>
+//             <input ref={ref} type="text"/>
+//         </div>
+//     )
+
+// }
+
+// export default forwardRef(User);
+
+function User(props){
+    console.warn(props);
     return(
         <div>
-            <input ref={ref} type="text"/>
+           <h1>User Component {props.match.params.id}</h1>
+           <h1>User Component {props.match.params.name}</h1>
         </div>
     )
 
 }
-
-// export default forwardRef(User);
 
 export default User;
