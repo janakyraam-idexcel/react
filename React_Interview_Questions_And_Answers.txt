@@ -189,3 +189,21 @@ A. useRef, we can use it in class component
 
 56. Can i use two ref on a single node?
 A. 
+
+57. Most of the time should we use ref or should we use states and propes?
+A. Always, try to use states or propes. use the ref in the mergency purpose only.
+
+58. How should we use forward ref inside class component?
+A. React.forwardRef(App) for class component. It is similar to functional component.
+
+59. Can we use the Controlled Component functionality inside class component also?
+A. Yes, we can use it.
+
+60. If one field is use state and another field is use ref. which control do we called?
+A. Uncontrolled Component.
+
+61. Can we use HOC in real life?
+A. 
+
+62. We have just provided routes inside our route. So what if we just put the code rather than routes?
+A.

@@ -1,3 +1,4 @@
+import React,{forwardRef} from 'react';
 // function User() { //functional component
 //     return (
 //       <div className="App">
@@ -99,16 +100,27 @@
 
 // }
 
-function User(props){
-    const name="test sample";
+// function User(props){
+//     const name="test sample";
+//     return(
+//         <div>
+//             {/* <h1>User Name is {props.data}</h1> */}
+//             <h1>User Name is:</h1>
+//             <button onClick={()=>props.getData(name)}>Click Me</button>
+//         </div>
+
+//     );
+// }
+
+function User(props, ref){
     return(
         <div>
-            {/* <h1>User Name is {props.data}</h1> */}
-            <h1>User Name is:</h1>
-            <button onClick={()=>props.getData(name)}>Click Me</button>
+            <input ref={ref} type="text"/>
         </div>
+    )
 
-    );
 }
+
+// export default forwardRef(User);
 
 export default User;

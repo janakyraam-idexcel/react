@@ -2,55 +2,55 @@ import logo from './logo.svg';
 import './App.css';
 import User from './User';
 import { Component, useState, useEffect, useMemo } from 'react';
-import React, {Fragment,PureComponent,createRef} from 'react';
+import React, { Fragment, PureComponent, createRef, useRef } from 'react';
 import Student from './Student';
 import Profile from './Profile';
 import Login from './Login';
 import Test from './Test';
 import './style.css';
 import style from './custom.module.css';
-import {Button, Badge, Card, Table, Tab} from 'react-bootstrap'
+import { Button, Badge, Card, Table, Tab } from 'react-bootstrap'
 import Cols from './Cols';
 import Counter from './Counter';
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 /*Sample Program */
 //function App() { //functional component
-  //let data="test";
-  // function Apple(){
-  //   return <h1>Apple</h1>;
-  // }
-  //let data='abc';
-  //function Apple(){
-    // alert("Hello from Apple");
-    //data="Hi"
-    //alert(data);
-  //}
+//let data="test";
+// function Apple(){
+//   return <h1>Apple</h1>;
+// }
+//let data='abc';
+//function Apple(){
+// alert("Hello from Apple");
+//data="Hi"
+//alert(data);
+//}
 
-  //const [data,setData]=useState("abc")
-  //const [data,setData]=useState(0);
+//const [data,setData]=useState("abc")
+//const [data,setData]=useState(0);
 
-  //function updateData(){  //States Functional Component
-    // data="peter";
-    // alert(data);
-    //setData("peter");
-    //setData(data+1);
-    //console.warn("_______");
-  //}
-  //return (
-    //<div className="App">
-      {/* <h1>Hello World</h1> */}
-      {/* <h1>{data}</h1> */}
-      {/* <button onClick={()=>alert("Hello")}>Click Me</button> */}
-      {/* <button onClick={Apple}>Click Me</button> */}  //Click event and function in React JS
-      //<h1>{data}</h1>
-      //<button onClick={updateData}>Updata Data</button>
-      {/* <User/> */}
-      {/* <User/>
+//function updateData(){  //States Functional Component
+// data="peter";
+// alert(data);
+//setData("peter");
+//setData(data+1);
+//console.warn("_______");
+//}
+//return (
+//<div className="App">
+{/* <h1>Hello World</h1> */ }
+{/* <h1>{data}</h1> */ }
+{/* <button onClick={()=>alert("Hello")}>Click Me</button> */ }
+{/* <button onClick={Apple}>Click Me</button> */ }  //Click event and function in React JS
+//<h1>{data}</h1>
+//<button onClick={updateData}>Updata Data</button>
+{/* <User/> */ }
+{/* <User/>
       <User/> */}
-      {/* {Apple()} */}
-      {/* <Apple/> */}
-    //</div>
-  //);
+{/* {Apple()} */ }
+{/* <Apple/> */ }
+//</div>
+//);
 //}
 
 // function User(){
@@ -689,29 +689,173 @@ import Counter from './Counter';
 // }
 
 //Ref
-class App extends Component {
-  constructor(){
-    super();
-   this.inputRef=createRef();
-  }
-  componentDidMount(){
-    //console.warn(this.inputRef.current.value="1000");
-  }
-  getVal(){
-    console.warn(this.inputRef.current.value);
-    this.inputRef.current.style.color="red";
-    this.inputRef.current.style.backgroundColor="black";
-  }
-  render(){
-    console.warn("rerender");
-    return (
-      <div className='App'>
-        <h1>Ref in React</h1>
-        <input type='text' ref={this.inputRef}/>
-        <button onClick={()=>this.getVal()}>Check Ref</button>
-      </div>
-    )
-  }
+// class App extends Component {
+//   constructor(){
+//     super();
+//    this.inputRef=createRef();
+//   }
+//   componentDidMount(){
+//     //console.warn(this.inputRef.current.value="1000");
+//   }
+//   getVal(){
+//     console.warn(this.inputRef.current.value);
+//     this.inputRef.current.style.color="red";
+//     this.inputRef.current.style.backgroundColor="black";
+//   }
+//   render(){
+//     console.warn("rerender");
+//     return (
+//       <div className='App'>
+//         <h1>Ref in React</h1>
+//         <input type='text' ref={this.inputRef}/>
+//         <button onClick={()=>this.getVal()}>Check Ref</button>
+//       </div>
+//     )
+//   }
+// }
+
+//useRef Hook
+// function App() {
+//   let inputRef=useRef(null);
+//   function controlInput(){
+//     //inputRef.current.value="abc";
+//     //inputRef.current.style.color="red";
+//     //inputRef.current.style.display="none";
+//     inputRef.current.focus();
+//   }
+//   return(
+//     <div className="App">
+//       <h1>useRef Hook in React</h1>
+//       <input type="text" ref={inputRef}/>
+//       <button onClick={controlInput}>Handle Input</button>
+//     </div>
+//   )
+// }
+
+// Forward Ref
+// function App() {
+//   let inputRef=useRef(null);
+//   function updateInput() {
+//     inputRef.current.value="1000";
+//     inputRef.current.style.color="red";
+//     inputRef.current.focus();
+//   }
+//   return(
+//     <div className="App">
+//     <h1>Forward Ref in React</h1>
+//     <User ref={inputRef}/>
+//     <button onClick={updateInput}>Update Input Box</button>
+//     </div>
+//   )
+// }
+
+// function App() {
+//   const [val, setVal]=useState("");
+//   const [item, setItem]=useState("");
+//   return(
+//     <div className="App">
+//     <h1>Controlled Component</h1>
+//     <input type="text" value={val} onChange={(e) =>setVal(e.target.value)}></input>
+//     <h1>{val}</h1>
+//     </div>
+//   )
+// }
+
+// function App() {
+//   let nameRef=useRef(null);
+//   let passwordRef=useRef(null);
+//   function submitForm(e){
+//     e.preventDefault();
+//     console.warn("input 1 value is:",nameRef.current.value);
+//     console.warn("input 2 value is:",nameRef.current.value);
+//     let email=document.getElementById("email").value;
+//     console.warn("input 3 value is:",nameRef.current.value);
+//   }
+//   return(
+//     <div className="App">
+//     <h1>UnControlled Component</h1>
+//     <form onSubmit={submitForm}>
+//       <input ref={nameRef} type="text"/> <br/> <br/>
+//       <input ref={passwordRef} type="text"/> <br/> <br/>
+//       <input id="email" type="text"/> <br/> <br/>
+//       <button>Submit</button>
+//     </form>
+//     </div>
+//   )
+// }
+
+// function App() {
+
+//   return(
+//     <div className="App">
+//     <h1>HOC</h1>
+//     <HOCRed cmp={Counter1}/>
+//     <HOCGreen cmp={Counter1}/>
+//     <HOCBlue cmp={Counter1}/>
+//     </div>
+//   )
+// }
+
+// function HOCRed(props){
+//   // return <h1><props.cmp/></h1>
+//   return <h1 style={{backgroundColor:'red', width: 100}}>Red<props.cmp/></h1>
+// }
+
+// function HOCGreen(props){
+//   return <h1 style={{backgroundColor:'green', width: 100}}>Red<props.cmp/></h1>
+// }
+
+// function HOCBlue(props){
+//   return <h1 style={{backgroundColor:'blue', width: 100}}>Red<props.cmp/></h1>
+// }
+
+// function Counter1() {
+// const [count, setCount]=useState(0);
+//   return(
+//     <div className="App">
+//     <h3>{count}</h3>
+//     <button onClick={() => setCount(count+1)}>Update</button>
+//     </div>
+//   )
+// }
+
+function App() {
+
+  return (
+    <div className="App">
+      <h1>Routing Setup</h1>
+      <Router>
+        <nav>
+        <Link to="/home">Home</Link>
+        <br></br>
+        <Link to="/about">About</Link>
+        </nav>
+        <Routes>
+        <Route path="/home" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+        </Routes>
+      </Router>
+    </div>
+  )
+}
+
+function Home() {
+  return (
+    <div>
+      <h1>Home Page</h1>
+      <p>This is my Home Page</p>
+    </div>
+  )
+}
+
+function About() {
+  return (
+    <div>
+      <h1>About Page</h1>
+      <p>This is my About Page</p>
+    </div>
+  )
 }
 
 export default App;
+
